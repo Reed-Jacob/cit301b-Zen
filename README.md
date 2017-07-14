@@ -1,6 +1,6 @@
 # Zen Garden Galaxy
 > http://www.csszengarden.com/
 
-Sarah Garner
-Cole Panike
+Sarah Garner <br>
+Cole Panike <br>
 Jacob Reed
