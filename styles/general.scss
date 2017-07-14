@@ -1,0 +1,57 @@
+// General
+
+html, body{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Raleway';
+  color: $text-color;
+  font-size: 16px;
+  line-height: 1.3;    
+  background-color:rgba(10,10,10,0.5);
+  min-width: 340px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Arvo", serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #C96736 ;
+}
+
+h3 {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+@media only screen and (max-width: $medBreakpoint - 1) {
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+  }
+}
+
+div[role=article], footer {
+  padding: 0 10px;
+}
+
+ul {
+  padding: 0 0 0 25px;
+}
+
+abbr {
+  text-decoration: none;
+  cursor: help;
+}
+
+// Links
+a,
+a:visited{
+  color: darken($text-color, 10);
+}
+a:hover,
+a:active {
+  color: lighten($text-color, 10);
+}

@@ -1,0 +1,16 @@
+//Structure
+@media only screen and (min-width: $medBreakpoint) {
+  body {
+    width: 80%;      
+    margin: auto;
+    box-shadow: 0 0 15px 10px rgba(10,10,10,0.5);
+  }
+  .intro .summary {
+    width: 500px;
+  }
+}
+@media only screen and (min-width: $largeBreakpoint) {
+  body {
+    width: 60%;
+  }
+}

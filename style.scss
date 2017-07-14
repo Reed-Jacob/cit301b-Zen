@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Arvo');
+
+$spacey-black: #0F1E2C;
+$text-color: #F4F4EA;
+
+$largeBreakpoint: 1200px;
+$medBreakpoint: 920px;
+
+@import "styles/general";
+@import "styles/background";
+@import "styles/header";
+@import "styles/footer";
+@import "styles/sidebar";
+@import "styles/structure";

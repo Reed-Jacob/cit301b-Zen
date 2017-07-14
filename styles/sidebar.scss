@@ -1,0 +1,141 @@
+// Sidebar
+.sidebar {
+    .wrapper h3 {
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    &::after {
+        content: '';
+        background-image: url("assets/icons/saturn.svg");
+        background-repeat: no-repeat;
+        margin: auto 20px;
+        display: block;
+        height: 200px;
+    }
+
+    .design-selection,
+    .zen-resources {
+        ul {
+            list-style: none;
+            padding-left: 10px;
+
+            li {
+                clear: both;
+                margin: 2px 0;
+                &::before {
+                    $bul-size: 18px;
+                    content: '';
+                    width: $bul-size;
+                    height: $bul-size * 2;
+                    float: left;
+                    background-position: top center;
+                    background-repeat: no-repeat;
+                    vertical-align: middle;
+                    margin-right: 8px;
+                }
+                & a:first-child::after {
+                    content:"\a";
+                    white-space: pre;
+                }
+                @for $i from 1 to 9 {
+                    &:nth-child(#{$i})::before {
+                        background-image: url("assets/icons/bullets/#{random(10)}.png")
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Archive Icons
+#design-archives {
+  h3 {
+    display: none;
+  }
+  nav ul {
+    list-style: none;
+
+    li {
+      display: inline-block;
+      a {
+        color: transparent;
+        height: 48px;
+        width: 48px;
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: filter 1s;
+
+        &:after {
+          content: '';
+          display: block;
+          height: 8px;
+          border-radius: 50%;
+          width: 100%;
+          background: #ccc;
+          box-shadow: 0 0 4px #ccc;
+          position: relative;
+          bottom: 18px;
+          opacity: 0;
+          transition: opacity 1s;
+          -webkit-backface-visibility: hidden; //chrome has a bug
+        }
+
+        &:hover {
+          filter: brightness(3);
+          &:after {
+            opacity: .2;
+          }
+        }
+      }
+
+      &.next a{
+        background-image: url("assets/icons/rocket.svg");
+      }
+      &.viewall a{
+        background-image: url("assets/icons/orbit.svg");
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $medBreakpoint - 1) {
+    .sidebar {
+        display: flex;
+        .wrapper {
+            width: 60%;
+            margin-right: 8px;
+        }
+        &::after {
+            width: 40%;
+        }
+    }
+}
+
+@media only screen and (min-width: $medBreakpoint) {
+    .sidebar {
+        position: absolute;
+        right: auto;
+        margin-left: 55%;
+        top: 352px;
+        padding: 0;
+        width: 20%;
+    }
+    .preamble,
+    .explanation,
+    .participation,
+    .benefits,
+    .requirements,
+    footer {
+        width: 65%;
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: $largeBreakpoint) {
+    .sidebar {
+        margin-left: 40%;
+    }
+}

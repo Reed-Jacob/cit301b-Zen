@@ -1,0 +1,44 @@
+// Background
+
+@function multiple-box-shadow ($n) {
+  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+  }
+  @return unquote($value);
+}
+
+html {
+  background-attachment: fixed;
+  background-color: $spacey-black;
+  background-image: radial-gradient(circle, lighten($spacey-black, 15), $spacey-black);
+}
+
+.preamble {
+  p::before {
+    content: '';
+    display: block;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  @for $i from 1 through 3 {
+    p:nth-child(#{$i})::before {
+      height: #{$i}px;
+      width: #{$i}px;
+      box-shadow: multiple-box-shadow(floor(1200 / $i));
+      animation: scroll #{floor(400 / $i)}s linear infinite;
+    }
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-1000px);
+  }
+}

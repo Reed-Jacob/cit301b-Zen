@@ -1,0 +1,30 @@
+//Footer
+
+[role="contentinfo"] {
+    text-align: center;
+}
+
+.main footer {
+    text-align: center;
+    margin-bottom: 20px;
+
+    a {
+        padding: 8px 15px;
+        font-family: "Arvo", serif;
+        font-weight: 900;
+        margin-right: 5px;
+        background: #e6e6e6;
+        color: $spacey-black;
+        text-decoration: none;
+
+        @media only screen and (max-width: 400px) {
+            padding: 8px 8px;
+        }
+
+        &:hover {
+            background: #323C47;
+            color: $text-color;
+            text-decoration: none;
+        }
+    }
+}
